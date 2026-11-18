@@ -47,5 +47,7 @@ int		handle_parse_error(char **str, t_list **stack);
 int		parse_and_append(t_list **stack, char *input);
 int		parse_args(t_stacks *stacks, int argc, char **argv);
 int		is_sorted(t_list *stack);
+double compute_disorder(t_list *stack);
+
 
 #endif
