@@ -48,6 +48,11 @@ int		parse_and_append(t_list **stack, char *input);
 int		parse_args(t_stacks *stacks, int argc, char **argv);
 int		is_sorted(t_list *stack);
 double compute_disorder(t_list *stack);
-
+int		get_val(t_list *node);
+int		is_sorted(t_list *stack);
+void	sort_stack(t_stacks *stacks);
+void	del_content(void *content);
+int		free_stacks(t_stacks *stacks, int exit_code);
+void    print_bench(t_stacks *stack);
 
 #endif

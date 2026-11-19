@@ -66,7 +66,7 @@ int	handle_parse_error(char **str, t_list **stack)
 {
 	if (str)
 		free_split(str);
-	ft_lstclear(stack, NULL);
+	ft_lstclear(stack, del_content);
 	write(2, "Error\n", 6);
 	return (0);
 }
