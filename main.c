@@ -24,7 +24,5 @@ int	main(int argc, char **argv)
 	stacks.disorder = compute_disorder(stacks.a);
 	if (stacks.a && !is_sorted(stacks.a))
 		sort_stack(&stacks);
-	if (stacks.a && stacks.bench)
-		print_bench(&stacks);
 	return (free_stacks(&stacks, 0));
 }

@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-void    sort_adaptive(t_stacks *stacks)
+void	sort_adaptive(t_stacks *stacks)
 {
-    if (stacks->disorder < 0.2)
-        sort_simple(stacks);
-    else if (stacks->disorder < 0.5)
-        sort_medium(stacks);
-    else
-        sort_complex(stacks);
+	if (stacks->disorder < 0.2)
+		sort_simple(stacks);
+	else if (stacks->disorder < 0.5)
+		sort_medium(stacks);
+	else
+		sort_complex(stacks);
 }

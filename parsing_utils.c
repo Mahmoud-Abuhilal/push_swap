@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
 int	check_algo(char *type)
@@ -21,8 +20,8 @@ int	check_algo(char *type)
 		return (2);
 	if (ft_strncmp(type, "--complex", 10) == 0)
 		return (3);
-    if (ft_strncmp(type, "--adaptive", 11) == 0)
-        return (4);
+	if (ft_strncmp(type, "--adaptive", 11) == 0)
+		return (4);
 	return (0);
 }
 

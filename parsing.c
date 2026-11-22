@@ -16,7 +16,7 @@ static int	has_duplicat(t_list *stack, int num)
 {
 	while (stack)
 	{
-		if ((int)(intptr_t) stack->content == num)
+		if (get_val(stack) == num)
 			return (1);
 		stack = stack->next;
 	}
@@ -27,7 +27,7 @@ static int	append_node(t_list **stack, int num)
 {
 	t_list	*node;
 
-	node = ft_lstnew((void *)(intptr_t) num);
+	node = ft_lstnew((void *)(intptr_t)num);
 	if (!node)
 		return (0);
 	ft_lstadd_back(stack, node);
@@ -51,7 +51,7 @@ static int	parse_and_append(t_list **stack, char *input)
 		num = ft_atol(split[i]);
 		if (num > 2147483647 || num < -2147483648L)
 			return (handle_parse_error(split, stack));
-		if (has_duplicat(*stack, (int) num) || !append_node(stack, (int) num))
+		if (has_duplicat(*stack, (int)num) || !append_node(stack, (int)num))
 			return (handle_parse_error(split, stack));
 		i++;
 	}
@@ -59,41 +59,41 @@ static int	parse_and_append(t_list **stack, char *input)
 	return (1);
 }
 
-static int  parse_flags(t_stacks *stacks, int argc, char **argv, int *i)
+static int	parse_flags(t_stacks *stacks, int argc, char **argv, int *i)
 {
-    int flag;
+	int	flag;
 
-    while (*i < argc)
-    {
-        if (ft_strncmp(argv[*i], "--bench", 8) == 0)
-        {
-            if (stacks->bench)
-                return (0);
-            stacks->bench = 1;
-        }
-        else
-        {
-            flag = check_algo(argv[*i]);
-            if (!flag)
-                break ;
-            if (stacks->algo_flag)
-                return (0);
-            stacks->algo_flag = flag;
-        }
-        (*i)++;
-    }
-    return (1);
+	while (*i < argc)
+	{
+		if (ft_strncmp(argv[*i], "--bench", 8) == 0)
+		{
+			if (stacks->bench)
+				return (0);
+			stacks->bench = 1;
+		}
+		else
+		{
+			flag = check_algo(argv[*i]);
+			if (!flag)
+				break ;
+			if (stacks->algo_flag)
+				return (0);
+			stacks->algo_flag = flag;
+		}
+		(*i)++;
+	}
+	return (1);
 }
 
-int parse_args(t_stacks *stacks, int argc, char **argv)
+int	parse_args(t_stacks *stacks, int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (!parse_flags(stacks, argc, argv, &i))
-        return (handle_parse_error(NULL, &stacks->a));
+		return (handle_parse_error(NULL, &stacks->a));
 	while (i < argc)
-    {
+	{
 		if (!parse_and_append(&stacks->a, argv[i++]))
 			return (0);
 	}
