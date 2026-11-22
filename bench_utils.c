@@ -31,8 +31,8 @@ const char	*get_op_name(int op)
 	if (op == 7)
 		return ("rr:  ");
 	if (op == 8)
-		return ("rra: ");
+		return ("rra:  ");
 	if (op == 9)
-		return ("rrb: ");
-	return ("rrr: ");
+		return ("rrb:  ");
+	return ("rrr:  ");
 }

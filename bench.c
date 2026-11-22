@@ -82,7 +82,7 @@ static void	print_ops(t_stacks *stack, int start, int end)
 		ft_putstr_fd((char *)get_op_name(start), 2);
 		ft_putnbr_fd(stack->ops[start], 2);
 		if (start < end)
-			ft_putstr_fd(" ", 2);
+			ft_putstr_fd("  ", 2);
 		start++;
 	}
 	ft_putstr_fd("\n", 2);
