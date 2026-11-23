@@ -6,7 +6,7 @@
 /*   By: mabuhila <mabuhila@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/11 11:30:46 by mabuhila         #+#    #+#              */
-/*   Updated: 2026/11/22 20:35:05 by mabuhila         ###   ########.fr       */
+/*   Updated: 2026/11/23 13:12:09 by mabuhila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,20 @@ void		del_content(void *content);
 int			free_stacks(t_stacks *stacks, int exit_code);
 void		print_bench(t_stacks *stack);
 const char	*get_op_name(int op);
+void		swap(t_list **stack);
+void		push(t_list **src, t_list **dest);
+void		rotate(t_list **stack);
+void		reverse_rotate(t_list **stack);
+void		sa(t_stacks *s);
+void		sb(t_stacks *s);
+void		ss(t_stacks *s);
+void		pa(t_stacks *s);
+void		pb(t_stacks *s);
+void		ra(t_stacks *s);
+void		rb(t_stacks *s);
+void		rr(t_stacks *s);
+void		rra(t_stacks *s);
+void		rrb(t_stacks *s);
+void		rrr(t_stacks *s);
 
 #endif
